@@ -7,11 +7,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/first', function () {
     return view('faris');
-});
+})->name('first_n');//Route naming for name changes advantage
+
 
 Route::view('/second', 'project');
+
 
 Route::get('/number/{num?}/status/{text?}', function (int $num = null, string $text = null) {
 
@@ -24,6 +27,9 @@ Route::get('/number/{num?}/status/{text?}', function (int $num = null, string $t
     }
 });
 
+
+//User defined
+
 Route::get('/condition/{con?}', function ( $con = null) {
 
     if($con){
@@ -33,5 +39,5 @@ Route::get('/condition/{con?}', function ( $con = null) {
     }else{
         return '<h2> Nothing found <h2>';
     }
-})->whereIn('con', ['swim', 'fly', 'walk']);
+})->whereIn('con', ['swim', 'fly', 'walk']);// where('con', ['0-9']+)
 
