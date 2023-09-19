@@ -1,4 +1,5 @@
 @extends('Layout.layout')
+<title>Home</title>
 
 @section('content')
 
@@ -223,6 +224,8 @@
         </div>
       </section>
 
+      
+
       <!-- our advantages-->
       <section class="section section-lg bg-gray-lighter novi-background bg-cover text-center">
         <div class="container container-wide">
@@ -398,7 +401,4 @@
             </div>
           </div>
         </div>
-      </section><a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
-
-  
 @endsection

@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -84,6 +86,10 @@ Route::get('/typography', function(){
     return view('typography');
 }
 )->name('typography');
+
+
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+
 
 
 Route::fallback(function(){

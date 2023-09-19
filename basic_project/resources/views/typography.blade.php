@@ -1,5 +1,8 @@
 @extends('Layout.layout')
 
+<title>Typography</title>
+
+
    @section('content')
      
      

@@ -1,6 +1,9 @@
 
 @extends('Layout.layout')
 
+<title>Contacts</title>
+
+
 @section('content')
 
         <!-- Contact info -->
@@ -67,18 +70,20 @@
                                 <hr class="divider divider-left divider-secondary">
                                 <p class="big">You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally.</p>
                                 <!-- RD Mailform -->
-                                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" >
+                                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ route('contacts.store') }}">
+                                    @csrf
+
                                     <div class="row row-fix row-20">
                                         <div class="col-md-6">
                                             <div class="form-wrap form-wrap-validation">
                                                 <label class="form-label-outside" for="form-1-name" required >First name</label>
-                                                <input class="form-input" id="form-1-name" type="text" name="name"/>
+                                                <input class="form-input" id="form-1-name" type="text" name="f_name"/>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-wrap form-wrap-validation">
                                                 <label class="form-label-outside" for="form-1-last-name">Last name</label>
-                                                <input class="form-input" id="form-1-last-name" type="text" name="last-name" required />
+                                                <input class="form-input" id="form-1-last-name" type="text" name="l_name" required />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
