@@ -3,6 +3,8 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
+
+// Define your routes here
 use Illuminate\Support\Facades\Route;
 
 
@@ -97,6 +99,7 @@ Route::get('/blogs', [BlogController::class, 'index']);
 
 Route::get('/search', [BlogController::class, 'search'])->name('search');
 
+Route::delete('/delete-all-blogs', [BlogController::class, 'deleteAllBlogs'])->name('deleteAllBlogs');
 
 
 

@@ -14,6 +14,7 @@ class BlogController extends Controller
         return view('viewAllBlogs', ['blogs' => $blogs]);
     }
 
+
     public function search(Request $request)
 {
     $query = $request->input('search');
@@ -22,6 +23,16 @@ class BlogController extends Controller
     $bloggers = Blog::where('name', 'like', '%' . $query . '%')->get();
 
     return view('viewBlog', ['bloggers' => $bloggers]);
+}
+
+
+public function deleteAllBlogs()
+{
+    // Use the truncate method to delete all records in the blogs table
+    Blog::truncate();
+
+    // Redirect or return a response after deletion
+    return redirect()->route('/')->with('success', 'All blogs deleted successfully');
 }
 
     
