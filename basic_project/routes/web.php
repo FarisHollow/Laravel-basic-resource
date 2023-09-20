@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -89,6 +90,11 @@ Route::get('/typography', function(){
 
 
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+
+Route::post('/addblog', [BlogController::class, 'store'])->name('addblog.store');
+ 
+Route::get('/blogs', [BlogController::class, 'index']);
+
 
 
 

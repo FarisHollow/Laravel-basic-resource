@@ -1,4 +1,6 @@
 @extends('Layout.layout')
+
+
 <title>Home</title>
 
 @section('content')
@@ -224,6 +226,49 @@
         </div>
       </section>
 
+      <div class="w-full max-w-screen-md mx-auto">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="POST" action={{ route('addblog.store') }} enctype="multipart/form-data">
+        @csrf
+
+        <div class="mb-4">
+            <h2 class="text-2xl font-bold mb-4">Write your blog</h2>
+
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="blog">
+                Blog:
+            </label>
+            <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="blog" name="blog" rows="5" placeholder="Write your blog here"></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                Name:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" name="name" type="text" placeholder="Enter Name">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="designation">
+                Designation:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="designation" name="designation" type="text" placeholder="Enter Designation">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="image">
+                Image:
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" name="image" type="file">
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Save
+            </button>
+        </div>
+    </form>
+</div>
+
+
       
 
       <!-- our advantages-->
@@ -333,59 +378,39 @@
                 </article>
               </div>
             </div>
-            <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="#">view all blog posts</a></div>
+            <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="/blogs">view all blog posts</a></div>
           </div>
         </div>
       </section>
 
-      <section class="section section-lg text-center bg-gray-lighter novi-background bg-cover">
+
+      {{-- <section class="section section-lg text-center bg-gray-lighter novi-background bg-cover">
         <div class="container container-bigger">
-          <h3>testimonials</h3>
-          <div class="divider divider-decorate"></div>
-          <!-- Owl Carousel-->
-          <div class="owl-carousel owl-layout-1" data-items="1" data-dots="true" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false" data-autoplay="true">
-            <article class="quote-boxed">
-              <div class="quote-boxed-aside"><img class="quote-boxed-image" src="images/quote-user-1-210x210.jpg" alt="" width="210" height="210"/>
-              </div>
-              <div class="quote-boxed-main">
-                <div class="quote-boxed-text">
-                  <p>I wanted to thank you very much for planning the trip to France for my boyfriend and me. It was amazing and exceeded my expectations! We had a wonderful time and were very pleased with the accommodations in Paris and Bayeux. Our private/small tour guides were fantastic! I appreciate all the effort to get us to the Eiffel Tower finally. </p>
-                </div>
-                <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">Ann McMillan</p>
-                  <p class="quote-boxed-small">Regular Customer</p>
-                </div>
-              </div>
-            </article>
-            <article class="quote-boxed">
-              <div class="quote-boxed-aside"><img class="quote-boxed-image" src="images/quote-user-2-210x210.jpg" alt="" width="210" height="210"/>
-              </div>
-              <div class="quote-boxed-main">
-                <div class="quote-boxed-text">
-                  <p>I had a marvelous time in our travels to Madagascar, Zimbabwe and Botswana, I had just wonderful experiences.I loved the location of the Gorges Camp as I felt like it was only the time we got to see real and rural Africans and how they truly lived. The service was amazing and everyone was very attentive!</p>
-                </div>
-                <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">Debra Ortega</p>
-                  <p class="quote-boxed-small">Regular Customer</p>
-                </div>
-              </div>
-            </article>
-            <article class="quote-boxed">
-              <div class="quote-boxed-aside"><img class="quote-boxed-image" src="images/quote-user-3-210x210.jpg" alt="" width="210" height="210"/>
-              </div>
-              <div class="quote-boxed-main">
-                <div class="quote-boxed-text">
-                  <p>Just wanted to say many, many thanks for helping me set up an amazing Costa Rican adventure! My nephew and I had a blast! All of the accommodations were perfect as were the activities that we did (canopy, coffee tour, hikes, fishing, and massages!) We have such fond memories and can't thank you enough!</p>
-                </div>
-                <div class="quote-boxed-meta">
-                  <p class="quote-boxed-cite">Samantha Smith</p>
-                  <p class="quote-boxed-small">Regular Customer</p>
-                </div>
-              </div>
-            </article>
-          </div>
+            <h3>All Blogs</h3>
+            <div class="divider divider-decorate"></div>
+            <!-- Owl Carousel-->
+            <div class="owl-carousel owl-layout-1" data-items="1" data-dots="true" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false" data-autoplay="true">
+                @foreach($blogs as $blog)
+                <article class="quote-boxed">
+                    <div class="quote-boxed-aside"><img class="quote-boxed-image" src="{{ asset($blog->image) }}" alt="{{ $blog->name }}" width="210" height="210"/>
+                    </div>
+                    <div class="quote-boxed-main">
+                        <div class="quote-boxed-text">
+                            <p>{{ $blog->blog }}</p>
+                        </div>
+                        <div class="quote-boxed-meta">
+                            <p class="quote-boxed-cite">{{ $blog->name }}</p>
+                            <p class="quote-boxed-small">{{ $blog->designation }}</p>
+                        </div>
+                    </div>
+                </article>
+                @endforeach
+            </div>
         </div>
-      </section>
+    </section> --}}
+    
+    
+            
 
       <section class="section section-md text-center text-md-left bg-gray-700 novi-background bg-cover">
         <div class="container container-wide">
@@ -396,7 +421,7 @@
                   <h3 class="box-cta-title">Buy a tour without leaving your home</h3>
                   <p>Using our website, you can book any tour just in a couple of clicks.</p>
                 </div>
-                <div class="box-cta-inner"><a class="button button-secondary button-nina" href="#">Book Now</a></div>
+                <div class="box-cta-inner"><a class="button button-secondary button-nina" href="/">Book Now</a></div>
               </div>
             </div>
           </div>
