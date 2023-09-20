@@ -13,6 +13,17 @@ class BlogController extends Controller
 
         return view('viewAllBlogs', ['blogs' => $blogs]);
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('search');
+
+    // Perform a database query to search for bloggers
+    $bloggers = Blog::where('name', 'like', '%' . $query . '%')->get();
+
+    return view('viewBlog', ['bloggers' => $bloggers]);
+}
+
     
 
  

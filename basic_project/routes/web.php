@@ -95,6 +95,11 @@ Route::post('/addblog', [BlogController::class, 'store'])->name('addblog.store')
  
 Route::get('/blogs', [BlogController::class, 'index']);
 
+Route::get('/search', [BlogController::class, 'search'])->name('search');
+
+
+
+
 
 
 
