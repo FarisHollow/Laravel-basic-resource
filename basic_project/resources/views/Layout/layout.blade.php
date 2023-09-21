@@ -112,7 +112,7 @@
                     <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('/') }}">Home</a></li>
                     <li class="{{ Request::is('aboutus') ? 'active' : '' }}"><a href="{{ route('aboutus') }}">About Us</a></li>
                     <li class="{{ Request::is('contacts') ? 'active' : '' }}"><a href="{{ route('contacts') }}">Contacts</a></li>
-                    <li class="{{ Request::is('typography') ? 'active' : '' }}"><a href="{{ route('typography') }}">Typography</a></li>
+                    <li class="{{ Request::is('typography') ? 'active' : '' }}"><a href="{{ route('blogs.index') }}">Blogs</a></li>
                 </ul>
                 
                 </div>

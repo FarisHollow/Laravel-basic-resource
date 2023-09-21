@@ -12106,6 +12106,12 @@ html[class*="ie"] .dtp-hand, html[class*="ie"] .dtp-hour-hand {
 	background: #ffffff;
 }
 
+@media (min-width: 1025px) {
+	.h-custom {
+	height: 100vh !important;
+	}
+	}
+
 .rd-navbar-fixed .rd-navbar-panel > * {
 	z-index: 1;
 }

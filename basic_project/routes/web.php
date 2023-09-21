@@ -58,7 +58,17 @@ Route:: prefix('page')->group(function(){
     
 });
 
+Route::get('/registration', function(){
 
+    return view('registration');
+}
+)->name('registration');
+
+Route::get('/login', function(){
+
+    return view('login');
+}
+)->name('login');
 
 Route::get('/user', function(){
 
@@ -95,7 +105,7 @@ Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.st
 
 Route::post('/addblog', [BlogController::class, 'store'])->name('addblog.store');
  
-Route::get('/blogs', [BlogController::class, 'index']);
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 
 Route::get('/search', [BlogController::class, 'search'])->name('search');
 
