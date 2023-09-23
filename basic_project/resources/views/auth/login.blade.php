@@ -21,7 +21,8 @@
   <div class="min-h-screen flex items-center justify-center">
     <div class="bg-white shadow-lg rounded-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
       <h2 class="text-2xl font-semibold mb-6">Login</h2>
-      <form action="#" method="POST">
+      <form action="#" method="POST" action='{{Route('login')}}'>
+        @csrf
         <div class="mb-4">
           <label for="email" class="block text-gray-600 font-medium">Email</label>
           <input type="email" name="email" id="email" class="border border-gray-300 rounded-lg p-2 w-full focus:outline-none focus:ring focus:border-blue-300" placeholder="Email">
@@ -32,7 +33,7 @@
         </div>
         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg py-2 w-full transition duration-300 transform hover:scale-105">Sign In</button>
       </form>
-      <p class="mt-4 text-gray-600 text-center">Don't have an account? <a href="registration" class="text-blue-500 hover:underline">Signup here</a></p>
+      <p class="mt-4 text-gray-600 text-center">Don't have an account? <a href="{{Route('registration')}}" class="text-blue-500 hover:underline">Signup here</a></p>
     </div>
   </div>
 </body>

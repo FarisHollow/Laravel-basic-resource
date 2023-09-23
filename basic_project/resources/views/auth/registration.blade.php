@@ -26,8 +26,8 @@
                 <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                     Create an Account
                 </h1>
-                <form class="space-y-4 md:space-y-6" method="POST">
-                    @csrf {{-- Add CSRF token field --}}
+                <form class="space-y-4 md:space-y-6" method="POST" action="{{Route('register')}}">
+                    @csrf 
                     
                     <div>
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>

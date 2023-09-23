@@ -4,7 +4,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\BlogController;
 
-// Define your routes here
+use Laravel\Fortify\Fortify;
 use Illuminate\Support\Facades\Route;
 
 
@@ -60,27 +60,21 @@ Route:: prefix('page')->group(function(){
 
 Route::get('/registration', function(){
 
-    return view('registration');
+    return view('auth.registration');
 }
 )->name('registration');
 
-Route::get('/login', function(){
+Route::get('/', function(){
 
-    return view('login');
+    return view('auth.login');
 }
-)->name('login');
+)->name('/');
 
 Route::get('/user', function(){
 
     return view('users',['user'=>'Faris']);
 }
 );
-
-Route::get('/', function(){
-
-    return view('index');
-}
-)->name('/');
 
 Route::get('/aboutus', function(){
 
@@ -110,6 +104,8 @@ Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/search', [BlogController::class, 'search'])->name('search');
 
 Route::delete('/delete-all-blogs', [BlogController::class, 'deleteAllBlogs'])->name('deleteAllBlogs');
+
+
 
 
 
