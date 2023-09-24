@@ -30,7 +30,7 @@ class FortifyServiceProvider extends ServiceProvider
     {
 
         Fortify::loginView('auth.login');
-        Fortify::registerView('auth.registration');
+        Fortify::registerView('auth.register');
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);

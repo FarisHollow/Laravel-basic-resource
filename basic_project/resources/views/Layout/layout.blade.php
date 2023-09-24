@@ -109,7 +109,7 @@
                 <div class="rd-navbar-nav-wrap">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('/') }}">Home</a></li>
+                    <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('/home') }}">Home</a></li>
                     <li class="{{ Request::is('aboutus') ? 'active' : '' }}"><a href="{{ route('aboutus') }}">About Us</a></li>
                     <li class="{{ Request::is('contacts') ? 'active' : '' }}"><a href="{{ route('contacts') }}">Contacts</a></li>
                     <li class="{{ Request::is('typography') ? 'active' : '' }}"><a href="{{ route('blogs.index') }}">Blogs</a></li>
@@ -134,6 +134,20 @@
                     <span class="sr-only">Search</span>
                 </button>
             </form>
+            <div class="rd-navbar-aside-right">
+              @auth
+                  <div class="relative inline-block text-left">
+                      <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-base leading-6 font-medium text-red-500 hover:text-red-600 focus:outline-none focus:underline transition ease-in-out duration-150">
+                          Logout
+                      </a>
+                  </div>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                      @csrf
+                  </form>
+           
+              @endauth
+          </div>
+          
                         </div>
           </nav>
         </div>

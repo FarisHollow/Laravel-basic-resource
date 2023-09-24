@@ -19,9 +19,27 @@
 
 <body class="bg-gray-100 font-sans">
   <div class="min-h-screen flex items-center justify-center">
+    @if (Route::has('login'))
+    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+        @auth
+            <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Go to Home</a>
+        @else
+            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+            @endif
+        @endauth
+    </div>
+@endif
     <div class="bg-white shadow-lg rounded-lg p-6 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+      <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+   </ul>
       <h2 class="text-2xl font-semibold mb-6">Login</h2>
-      <form action="#" method="POST" action='{{Route('login')}}'>
+      <form  method="POST" action='{{Route('login')}}'>
         @csrf
         <div class="mb-4">
           <label for="email" class="block text-gray-600 font-medium">Email</label>
@@ -33,7 +51,7 @@
         </div>
         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg py-2 w-full transition duration-300 transform hover:scale-105">Sign In</button>
       </form>
-      <p class="mt-4 text-gray-600 text-center">Don't have an account? <a href="{{Route('registration')}}" class="text-blue-500 hover:underline">Signup here</a></p>
+      <p class="mt-4 text-gray-600 text-center">Don't have an account? <a href="{{Route('register')}}" class="text-blue-500 hover:underline">Signup here</a></p>
     </div>
   </div>
 </body>

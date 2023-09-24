@@ -1,6 +1,3 @@
-@if(Route::has('login'))
- @auth
-   
 
 @extends('Layout.layout')
 
@@ -434,8 +431,4 @@
         </div>
 @endsection
 
-@else
-   
-
-@endauth
 

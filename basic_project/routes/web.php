@@ -38,19 +38,6 @@ Route:: prefix('page')->group(function(){
     });
     
     
-    //User defined
-    
-    Route::get('/condition/{con?}', function ( $con = null) {
-    
-        if($con){
-    
-            return '<h2> Contents: '.$con;
-    
-        }else{
-            return '<h2> Nothing found <h2>';
-        }
-    })->whereIn('con', ['swim', 'fly', 'walk']);// where('con', ['0-9']+)
-    
     
     
     
@@ -58,17 +45,19 @@ Route:: prefix('page')->group(function(){
     
 });
 
-Route::get('/registration', function(){
 
-    return view('auth.registration');
-}
-)->name('registration');
 
 Route::get('/', function(){
 
     return view('auth.login');
 }
 )->name('/');
+
+Route::get('/home', function(){
+
+    return view('index');
+}
+)->name('/home')->middleware('auth');
 
 Route::get('/user', function(){
 
@@ -80,28 +69,24 @@ Route::get('/aboutus', function(){
 
     return view('aboutus');
 }
-)->name('aboutus');
+)->name('aboutus')->middleware('auth');
 
 Route::get('/contacts', function(){
 
     return view('contacts');
 }
-)->name('contacts');
-
-Route::get('/typography', function(){
-
-    return view('typography');
-}
-)->name('typography');
+)->name('contacts')->middleware('auth');
 
 
-Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
-Route::post('/addblog', [BlogController::class, 'store'])->name('addblog.store');
+
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store')->middleware('auth');
+
+Route::post('/addblog', [BlogController::class, 'store'])->name('addblog.store')->middleware('auth');
  
-Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index')->middleware('auth');
 
-Route::get('/search', [BlogController::class, 'search'])->name('search');
+Route::get('/search', [BlogController::class, 'search'])->name('search')->middleware('auth');
 
 Route::delete('/delete-all-blogs', [BlogController::class, 'deleteAllBlogs'])->name('deleteAllBlogs');
 
