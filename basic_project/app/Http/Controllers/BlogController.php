@@ -32,7 +32,7 @@ public function deleteAllBlogs()
     Blog::truncate();
 
     // Redirect or return a response after deletion
-    return redirect()->route('/')->with('success', 'All blogs deleted successfully');
+    return redirect()->route('/home')->with('success', 'All blogs deleted successfully');
 }
 
     
@@ -65,6 +65,6 @@ public function deleteAllBlogs()
         // Redirect to a success page or return a response
         // You can customize this based on your needs
 
-        return redirect()->route('/'); // Assuming you have a route named 'blogs.index'
+        return redirect()->route('/home'); // Assuming you have a route named 'blogs.index'
     }
 }

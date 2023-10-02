@@ -20,7 +20,6 @@
   
     <!-- Page preloader-->
     <div class="page-loader"> 
-     
       <div class="page-loader-body"> 
         <div class="preloader-wrapper big active"> 
           <div class="spinner-layer spinner-blue"> 
@@ -136,6 +135,18 @@
           </nav>
         </div>
       </header>
+
+      @if(auth()->check())
+      @if(auth()->user()->role === 'admin')
+          @include('adminPanel')
+      @elseif(auth()->user()->role === 'employee')
+          @include('employeePanel')
+      @else
+          <h1>No role found</h1>
+      @endif
+  @else
+      <h1>Not authenticated</h1>
+  @endif
 
 
       

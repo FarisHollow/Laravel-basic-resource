@@ -2,7 +2,6 @@
 
 @section('content')
     <h1>Home</h1>
-
     <a href="{{ route('logout') }}"
        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         Logout

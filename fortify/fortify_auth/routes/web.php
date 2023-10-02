@@ -22,6 +22,13 @@ Route::get('/home', function () {
     return view('index');
 })->middleware('auth');
 
+Route::get('/employee', function () {
+    return view('employeePanel');
+})->name('employee')->middleware('auth');
+
+Route::get('/admin', function () {
+    return view('adminPanel');
+})->name('admin')->middleware('auth');
 
 
 

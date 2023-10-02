@@ -14,7 +14,7 @@
           <!-- Swiper-->
           <div class="swiper-container swiper-slider swiper-slider_height-1 swiper-align-left swiper-align-left-custom context-dark bg-gray-darker" data-loop="false" data-autoplay="5500" data-simulate-touch="false" data-slide-effect="fade">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-1.jpg">
+              <div class="swiper-slide" data-slide-bg="images/athens.jpg">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
@@ -27,7 +27,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-2.jpg">
+              <div class="swiper-slide" data-slide-bg="images/new.jpg">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
@@ -40,7 +40,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-3.jpg">
+              <div class="swiper-slide" data-slide-bg="images/rome.jpg">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
@@ -156,7 +156,7 @@
             <div class="col-md-6 col-xl-4">
               <article class="event-default-wrap">
                 <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-01-570x370.jpg" alt="" width="570" height="370"/>
+                  <figure class="event-default-image"><img src="images/france.jpg" alt="" width="570" height="370"/>
                   </figure>
                   <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
                 </div>
@@ -168,7 +168,7 @@
             <div class="col-md-6 col-xl-4">
               <article class="event-default-wrap">
                 <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-02-570x370.jpg" alt="" width="570" height="370"/>
+                  <figure class="event-default-image"><img src="images/boston.jpg" alt="" width="570" height="370"/>
                   </figure>
                   <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
                 </div>
@@ -180,7 +180,7 @@
             <div class="col-md-6 col-xl-4">
               <article class="event-default-wrap">
                 <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-03-570x370.jpg" alt="" width="570" height="370"/>
+                  <figure class="event-default-image"><img src="images/venice.jpg" alt="" width="570" height="370"/>
                   </figure>
                   <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
                 </div>
@@ -192,7 +192,7 @@
             <div class="col-md-6 col-xl-4">
               <article class="event-default-wrap">
                 <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-04-570x370.jpg" alt="" width="570" height="370"/>
+                  <figure class="event-default-image"><img src="images/benidorm.jpg" alt="" width="570" height="370"/>
                   </figure>
                   <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
                 </div>
@@ -204,7 +204,7 @@
             <div class="col-md-6 col-xl-4">
               <article class="event-default-wrap">
                 <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-05-570x370.jpg" alt="" width="570" height="370"/>
+                  <figure class="event-default-image"><img src="images/egypt.jpg" alt="" width="570" height="370"/>
                   </figure>
                   <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
                 </div>
@@ -216,7 +216,7 @@
             <div class="col-md-6 col-xl-4">
               <article class="event-default-wrap">
                 <div class="event-default">
-                  <figure class="event-default-image"><img src="images/landing-private-airlines-06-570x370.jpg" alt="" width="570" height="370"/>
+                  <figure class="event-default-image"><img src="images/london.jpg" alt="" width="570" height="370"/>
                   </figure>
                   <div class="event-default-caption"><a class="button button-xs button-secondary button-nina" href="#">learn more</a></div>
                 </div>
@@ -325,7 +325,7 @@
               <div class="divider divider-decorate"></div>
               <!-- Owl Carousel-->
               <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-items="1" data-md-items="2" data-xl-items="3" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true" data-autoplay="true">
-                <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/landing-private-airlines-7-570x415.jpg" alt="" width="570" height="415"/></a>
+                <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/top.jpg" alt="" width="570" height="415"/></a>
                   <div class="post-blog-caption">
                     <div class="post-blog-caption-header">
                       <ul class="post-blog-tags">
@@ -343,7 +343,7 @@
                     </div>
                   </div>
                 </article>
-                <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/landing-private-airlines-8-570x415.jpg" alt="" width="570" height="415"/></a>
+                <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/plan.jpg" alt="" width="570" height="415"/></a>
                   <div class="post-blog-caption">
                     <div class="post-blog-caption-header">
                       <ul class="post-blog-tags">
@@ -361,7 +361,7 @@
                     </div>
                   </div>
                 </article>
-                <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/landing-private-airlines-9-570x415.jpg" alt="" width="570" height="415"/></a>
+                <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/person.jpg" alt="" width="570" height="415"/></a>
                   <div class="post-blog-caption">
                     <div class="post-blog-caption-header">
                       <ul class="post-blog-tags">
